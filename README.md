@@ -1,24 +1,5 @@
-# README
+# Online Review Site
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Launch Academy project description:
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+"In this challenge you'll be building a full-fledged web application from scratch. Users should be able to add new items and write reviews of them. The item for review can be anything you want (e.g. restaurants, food trucks, museums, concert venues, etc.)."
