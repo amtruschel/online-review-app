@@ -5,20 +5,26 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= stylesheet_link_tag 'application','https://fonts.googleapis.com/css?family=Ubuntu', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
 
-  <body>
-    <div class="row">
-        <div class="col-sm-8">
-          <% flash.each do |key, value| %>
-            <div class="flash <%= key %>">
-              <%= value %><a href="#" class="close" data-dismiss="alert">X</a>
-            </div>
-          <% end %>
-        </div>
+  <body id="body">
+    <%= render "layouts/navbar" %>
+    <div class="row m-2">
+      <div class="col">
+        <% flash.each do |key, value| %>
+          <div class="flash <%= key %> alert alert-dismissible fade show align-middle" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <%= value %><a id="flash-msg" href="#" class="close" data-dismiss="alert"></a>
+          </div>
+        <% end %>
       </div>
-    <%= yield %>
+    </div>
+    <div class="container-fluid">
+      <%= yield %>
+    </div>
   </body>
 </html>

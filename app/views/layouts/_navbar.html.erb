@@ -1,0 +1,16 @@
+<nav class="navbar navbar-expand-lg navbar-light" id="navbar">
+
+  <a class="navbar-brand ml-2" id="nav-bar-logo" href="/"><strong>review stuff</strong></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+        <% if current_user.nil? %>
+          <li class="nav-item"><%= link_to 'sign in', new_user_session_path %></li>
+        <% else %>
+          <li class="nav-item"><%= link_to 'sign out', destroy_user_session_path, method: :delete %></li>
+        <% end %>
+    </ul>
+  </div>
+</nav>

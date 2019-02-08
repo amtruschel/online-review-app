@@ -1,0 +1,35 @@
+#body {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: x-large;
+}
+
+#navbar {
+  background-color: #c4dafc;
+}
+
+#nav-bar-logo {
+  font-size: xx-large;
+}
+
+.collapse.show .navbar-nav .nav-item {
+  margin-left: 9px;
+}
+
+.flash.notice {
+  background-color: #8cffb4;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#flash-msg {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+/* #page-title {
+  font-size: 500%;
+}
+
+.dropdown {
+  font-size: large;
+} */

@@ -23,6 +23,10 @@ gem 'fog-aws'
 # Use Devise for auth
 gem 'devise'
 # Use CoffeeScript for .coffee assets and views
+gem 'jquery-rails'
+gem 'bootstrap'
+gem 'sprockets-rails'
+
 gem 'coffee-rails', '~> 4.2'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
