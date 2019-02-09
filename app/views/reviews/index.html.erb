@@ -1,0 +1,20 @@
+<div class="row justify-content-center">
+  <div class="col-sm-6">
+    <% if !@user_reviews.empty? %>
+      <h2>my reviews</h2>
+        <% @user_reviews.each do |review| %>
+          <ul>
+            <li><%= review %></li>
+          </ul>
+        <% end %>
+    <% end %>
+  </div>
+  <div class="col-sm-6">
+    <h2>recent reviews</h2>
+      <% @reviews.each do |review| %>
+        <ul>
+          <li><%= review %></li>
+        </ul>
+      <% end %>
+  </div>
+</div>
