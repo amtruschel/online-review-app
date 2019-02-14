@@ -1,0 +1,10 @@
+<div class="col-sm-6">
+  <% if !current_user.nil? %>
+    <h2>my reviews</h2>
+      <% @user_reviews.each do |review| %>
+        <ul class="reviews-list">
+          <li><a href="/reviews/<%= review.id %>"><%= review.title %></a></li>
+        </ul>
+      <% end %>
+  <% end %>
+</div>

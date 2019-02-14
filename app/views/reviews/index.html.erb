@@ -1,20 +1,37 @@
+<div class="row">
+  <div class="col">
+    <div class="jumbotron d-flex justify-content-center ml-1 mr-3 shadow-sm rounded">
+        <h1 class="display-4">review stuff</h1>
+        <p class="lead">a place to review anything you want</p>
+    </div>
+  </div>
+</div>
 <div class="row justify-content-center">
-  <div class="col-sm-6">
+  <%= form_tag("/reviews_search", method: "get", class: "reviews-search form-group") do %>
+    <%= label_tag(:q, "search for reviews", class: "mr-2") %>
+    <%= text_field_tag(:q) %>
+    <%= submit_tag("search", class: "btn btn-primary ml-1")%>
+  <% end %>
+</div>
+<div class="row">
+<div class="col-sm-6">
+  <h2>recent reviews</h2>
+    <% @reviews.each do |review| %>
+      <ul class="reviews-list">
+        <li><a href="/reviews/<%= review.id %>"><%= review.title %></a></li>
+      </ul>
+    <% end %>
+</div>
+<div class="col-sm-6">
+  <% if !current_user.nil? %>
     <% if !@user_reviews.empty? %>
       <h2>my reviews</h2>
         <% @user_reviews.each do |review| %>
-          <ul>
-            <li><%= review %></li>
+          <ul class="reviews-list">
+            <li><a href="/reviews/<%= review.id %>"><%= review.title %></a></li>
           </ul>
         <% end %>
     <% end %>
-  </div>
-  <div class="col-sm-6">
-    <h2>recent reviews</h2>
-      <% @reviews.each do |review| %>
-        <ul>
-          <li><%= review %></li>
-        </ul>
-      <% end %>
-  </div>
+  <% end %>
+</div>
 </div>

@@ -1,0 +1,7 @@
+<div class="list-group shadow-sm rounded">
+  <% if !current_user.nil? %>
+    <a href="/users/<%= current_user.id %>/reviews" class="list-group-item list-group-item-action">my reviews</a>
+  <% end %>
+  <a href="/top_reviews" class="list-group-item list-group-item-action">top reviews</a>
+  <a href="#" class="list-group-item list-group-item-action">third thing</a>
+</div>

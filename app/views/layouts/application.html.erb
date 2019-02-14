@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>OnlineReviewSite</title>
+    <title>review stuff</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application','https://fonts.googleapis.com/css?family=Ubuntu', media: 'all' %>
+    <%= stylesheet_link_tag 'application','https://fonts.googleapis.com/css?family=Ubuntu', 'https://use.fontawesome.com/releases/v5.7.2/css/all.css', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
 
@@ -23,8 +23,15 @@
         <% end %>
       </div>
     </div>
-    <div class="container-fluid">
-      <%= yield %>
+    <div class="container-fluid" id="site-contents">
+      <div class="row">
+        <div class="col-lg-2" id="sidebar">
+          <%= render 'layouts/sidebar' %>
+        </div>
+        <div class="col-lg-10">
+          <%= yield %>
+        </div>
+      </div>
     </div>
   </body>
 </html>

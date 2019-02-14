@@ -1,0 +1,8 @@
+<div class="col-sm-6">
+  <h2>top reviews</h2>
+    <% @top_reviews.each do |review| %>
+      <ul class="reviews-list">
+        <li><a href="/reviews/<%= review.id %>"><%= review.title %></a></li>
+      </ul>
+    <% end %>
+</div>
