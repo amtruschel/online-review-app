@@ -1,14 +1,20 @@
 #body {
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Nanum Pen Script', cursive;
   font-size: x-large;
 }
 
 #navbar {
-  background-color: #c4dafc;
+  background-color: #3c3c3d;
 }
 
 #nav-bar-logo {
   font-size: xx-large;
+  font-family: 'Fredericka the Great', cursive;
+  color: white;
+}
+
+.display-4 {
+  font-family: 'Fredericka the Great', cursive;
 }
 
 .collapse.show .navbar-nav .nav-item {
@@ -27,11 +33,8 @@
 }
 
 #site-contents {
-  margin-left: 7px;
-}
-
-.reviews-list li {
-  font-size: medium;
+  margin-left: 3px;
+  margin-right: 3px;
 }
 
 #sidebar {
@@ -39,10 +42,20 @@
   padding-right: 1px;
 }
 
-#review-body {
-  background-color: #e6e8ed;
+#sidebar-items a {
+  background-color: #3174e0;
+  color: white;
+}
+
+#review-title {
+  font-size: xx-large;
 }
 
 .fas {
   color: #3a82f4;
+}
+
+.carousel-item img {
+  width: 100%;
+  margin-left: 2px;
 }

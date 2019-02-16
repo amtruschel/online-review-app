@@ -1,4 +1,4 @@
-<div class="list-group shadow-sm rounded">
+<div class="list-group shadow-sm rounded mb-3" id="sidebar-items">
   <% if !current_user.nil? %>
     <a href="/users/<%= current_user.id %>/reviews" class="list-group-item list-group-item-action">my reviews</a>
   <% end %>
