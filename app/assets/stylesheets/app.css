@@ -5,11 +5,11 @@
 
 #navbar {
   background-color: #3c3c3d;
+  font-family: 'Fredericka the Great', cursive;
 }
 
 #nav-bar-logo {
   font-size: xx-large;
-  font-family: 'Fredericka the Great', cursive;
   color: white;
 }
 
@@ -23,6 +23,12 @@
 
 .flash.notice {
   background-color: #8cffb4;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.flash.alert {
+  background-color: #e0dede;
   padding-left: 5px;
   padding-right: 5px;
 }
@@ -51,8 +57,27 @@
   font-size: xx-large;
 }
 
-.fas {
-  color: #3a82f4;
+.fa-camera {
+  color: #11a3f7;
+}
+
+.fa-camera:hover {
+  color: #3c3c3d;
+}
+
+#sidebar-plus-sign {
+  margin-right: 3px;
+}
+
+#add-photo-plus-sign {
+  vertical-align: top;
+  padding-top: 18px;
+}
+
+.carousel-item p {
+  background-color: #3c3c3d;
+  font-family: 'Fredericka the Great', cursive;
+  border-radius: 5px;
 }
 
 .carousel-item img {

@@ -1,7 +1,7 @@
-<div class="list-group shadow-sm rounded mb-3" id="sidebar-items">
+<div class="list-group shadow-lg rounded mb-3" id="sidebar-items">
   <% if !current_user.nil? %>
     <a href="/users/<%= current_user.id %>/reviews" class="list-group-item list-group-item-action">my reviews</a>
   <% end %>
-  <a href="/top_reviews" class="list-group-item list-group-item-action">top reviews</a>
-  <a href="#" class="list-group-item list-group-item-action">third thing</a>
+  <%= link_to "top reviews", top_reviews_path, class: "list-group-item list-group-item-action" %>
+  <%= link_to '<i class="fas fa-plus" style="font-size: .75em;" id="sidebar-plus-sign"></i> review'.html_safe, new_review_path, class: "list-group-item list-group-item-action" %>
 </div>

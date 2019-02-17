@@ -1,0 +1,33 @@
+<div class="row d-flex form-group">
+  <div class="col-lg-8">
+    <%= form_with model: @review do |f| %>
+      <%= f.label "title" %>
+  </div>
+  <div class="col-lg-8">
+    <%= f.text_field :title, class:"form-control" %>
+  </div>
+</div>
+<div class="row d-flex">
+  <div class="col-lg-8">
+    <%= f.label "description" %>
+  </div>
+</div>
+<div class="row d-flex">
+  <div class="col-lg-8">
+    <%= f.text_area :body, class:"form-control" %>
+  </div>
+</div>
+<div class="row d-flex">
+  <div class="col-lg-2">
+    <p data-toggle="tooltip" data-html="true" title="add photo">
+      <i class="fas fa-plus" style="font-size: 1em;" id="add-photo-plus-sign"></i>
+      <i class="fas fa-camera mb-3 mt-3" style="font-size: 3em;"></i>
+    </p>
+  </div>
+</div>
+<div class="row d-flex">
+  <div class="col-lg-8">
+    <%= f.submit "submit", class:"btn btn-lg btn-primary" %>
+  </div>
+  <% end %>
+</div>
