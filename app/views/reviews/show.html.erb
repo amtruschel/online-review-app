@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row d-flex">
     <div class="col-lg-10 text-center">
-      <div class="card border-dark shadow-sm">
+      <div class="card border-dark shadow-sm p-3 mb-5 bg-white rounded">
         <div class="card-header" id="review-title"><%= @review.title %>
         </div>
           <div class="card-body">
@@ -10,15 +10,18 @@
       </div>
     </div>
   </div>
-  <div class="col-lg-2"></div>
-  <div class="row">
+  <div class="row d-flex">
+    <div class="col-lg-10 text-center">
+      <%= image_tag @review.review_photo_url.to_s, class:"shadow p-3 mb-5 bg-white rounded img-fluid" %>
+    </div>
+  </div>
+  <div class="row d-flex">
     <div class="col-lg-2"></div>
-    <div class="col-lg-4">
+    <div class="col-lg-5">
       <p id="review-rating">user rating: <%= @review.user_rating %></p>
     </div>
-    <div class="col-lg-4">
+    <div class="col-lg-5">
       <p id="votes-count">votes: <%= @review.votes_count || 0 %></p>
     </div>
-    <div class="col-2"></div>
   </div>
 </div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_09_213737) do
+ActiveRecord::Schema.define(version: 2019_02_17_221649) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2019_02_09_213737) do
     t.integer "user_rating", null: false
     t.integer "user_id", null: false
     t.integer "votes_count"
-    t.text "body", null: false
+    t.text "body"
     t.string "title", null: false
   end
 

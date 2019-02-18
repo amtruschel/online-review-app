@@ -8,6 +8,10 @@
   font-family: 'Fredericka the Great', cursive;
 }
 
+#navbar-toggler-icon {
+  color: white;
+}
+
 #nav-bar-logo {
   font-size: xx-large;
   color: white;

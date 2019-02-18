@@ -18,6 +18,13 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params.merge(user: current_user))
+    binding.pry
+    if @review.save
+      flash[:notice] = "Review saved successfully"
+    else
+      flash[:notice] = @review.errors.full_messages.join(', ')
+    end
+    redirect_to root_path
   end
 
   def user_reviews
@@ -41,8 +48,8 @@ class ReviewsController < ApplicationController
 
 private
 
-  def configure_review_params
-    params.require(:review).permit(:review_photo)
+  def review_params
+    params.require(:review).permit(:review_photo,:title,:body,:user_rating)
   end
 
   def authorize_member_user
