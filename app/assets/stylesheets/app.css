@@ -1,11 +1,10 @@
 #body {
-  font-family: 'Nanum Pen Script', cursive;
-  font-size: x-large;
+  font-family: 'Montserrat', sans-serif;
+  font-size: large;
 }
 
 #navbar {
   background-color: #3c3c3d;
-  font-family: 'Fredericka the Great', cursive;
 }
 
 #navbar-toggler-icon {
@@ -14,6 +13,7 @@
 
 #nav-bar-logo {
   font-size: xx-large;
+  font-family: 'Fredericka the Great', cursive;
   color: white;
 }
 
