@@ -32,9 +32,10 @@
 }
 
 .flash.alert {
-  background-color: #e0dede;
+  background-color: #e5e7e8;
   padding-left: 5px;
   padding-right: 5px;
+  border: 1px solid grey;
 }
 
 #flash-msg {
@@ -87,4 +88,21 @@
 .carousel-item img {
   width: 100%;
   margin-left: 2px;
+}
+
+.thumb-icon {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+#modal-group {
+  background-color: white;
+}
+
+#review-form {
+  margin-top: 30px;
+}
+
+li {
+  list-style: none;
 }

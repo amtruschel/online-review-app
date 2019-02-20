@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_17_221649) do
+ActiveRecord::Schema.define(version: 2019_02_19_012902) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2019_02_17_221649) do
     t.string "review_photo"
     t.integer "user_rating", null: false
     t.integer "user_id", null: false
-    t.integer "votes_count"
+    t.integer "votes_count", default: 0
     t.text "body"
     t.string "title", null: false
   end

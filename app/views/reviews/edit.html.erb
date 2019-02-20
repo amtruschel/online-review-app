@@ -1,1 +1,6 @@
-<i class="fas fa-edit" style="font-size: 3em;"></i>
+<% if @review.user == current_user || current_user.admin? %>
+    <h3>edit review</h3>
+    <%= render 'reviews/review_form' %>
+  <% else %>
+  <h3>You don't have access to edit this review</h3>
+<% end %>

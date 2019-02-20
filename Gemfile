@@ -24,6 +24,7 @@ gem 'fog-aws'
 gem 'devise'
 # Use CoffeeScript for .coffee assets and views
 gem 'jquery-rails'
+gem 'popper_js'
 gem 'bootstrap'
 gem 'sprockets-rails'
 

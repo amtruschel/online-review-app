@@ -1,10 +1,10 @@
-<div class="row d-flex form-group">
+<div class="row d-flex">
   <div class="col-lg-8">
-    <%= form_with model: @review, html: { multipart: true } do |f| %>
+    <%= form_with model: @review, id: "review-form", html: { multipart: true }, local: true do |f| %>
       <strong><%= f.label "title" %></strong>
   </div>
   <div class="col-lg-8">
-    <%= f.text_field :title, class:"form-control" %>
+    <%= f.text_field :title, class:"form-control", id:"review-form-title" %>
   </div>
 </div>
 <div class="row d-flex">
@@ -33,7 +33,7 @@
 </div>
 <div class="row d-flex">
   <div class="col-lg-8">
-    <%= f.submit "submit", class:"btn btn-lg btn-primary" %>
+    <%= f.submit "submit", class:"btn btn-lg btn-primary", id:"review-form-submit" %>
   </div>
   <% end %>
 </div>

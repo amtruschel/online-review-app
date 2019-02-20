@@ -1,0 +1,10 @@
+<% if current_user.admin? %>
+  <div class="col-lg-6">
+    <h2>all reviews</h2>
+      <% @all_reviews.each do |review| %>
+        <ul class="reviews-list">
+          <li><a href="/reviews/<%= review.id %>"><%= review.title %></a></li>
+        </ul>
+      <% end %>
+  </div>
+<% end %>
