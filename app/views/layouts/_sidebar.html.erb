@@ -3,7 +3,7 @@
     <a href="/users/<%= current_user.id %>/reviews" class="list-group-item list-group-item-action">my reviews</a>
   <% end %>
   <%= link_to "top reviews", top_reviews_path, class: "list-group-item list-group-item-action" %>
-  <% if current_user.admin? %>
+  <% if !current_user.nil? %>
     <%= link_to "all reviews", all_reviews_path, class: "list-group-item list-group-item-action" %>
   <% end %>
   <%= link_to '<i class="fas fa-plus" style="font-size: .75em;" id="sidebar-plus-sign"></i> add review'.html_safe, new_review_path, class: "list-group-item list-group-item-action"%>

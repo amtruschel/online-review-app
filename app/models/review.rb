@@ -1,6 +1,7 @@
 class Review < ApplicationRecord
   attr_accessor :review_photo
   belongs_to :user
+  has_many :user_review_votes
   mount_uploader :review_photo, ReviewpicsUploader
 
   validates :user_rating, presence: true

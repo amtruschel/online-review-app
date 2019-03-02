@@ -1,4 +1,4 @@
-<% if current_user.admin? %>
+<% if !current_user.nil? %>
   <div class="col-lg-6">
     <h2>all reviews</h2>
       <% @all_reviews.each do |review| %>

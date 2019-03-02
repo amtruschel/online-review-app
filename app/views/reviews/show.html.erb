@@ -42,7 +42,7 @@
       <%= button_to "edit review", edit_review_path(@review), class: "btn btn-primary", method: "get" %>
       </div>
   <% end %>
-  <% if @review.user == current_user || current_user.admin? %>
+  <% if @review.user == current_user || !current_user.nil? && current_user.admin? %>
       <div class="col-lg-3 text-center">
       <%= button_to "delete review", review_path(@review), class: "btn btn-danger", data: {confirm: "Are you sure you want to delete this?"}, method: "delete" %>
       </div>

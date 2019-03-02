@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :authorize_member_user, except: [:show,:index,:top_reviews,:search]
-  before_action :get_review, only: [:show,:edit,:update,:up_vote,:down_vote,:destroy]
+  before_action :get_review, only: [:show,:edit,:update,:destroy]
 
   def index
     @recent_reviews = Review.all.order('created_at DESC').limit(10)
@@ -62,18 +62,56 @@ class ReviewsController < ApplicationController
   end
 
   def up_vote
-    @review.votes_count += 1
-    if @review.save
-      flash.now[:alert] = "Thanks for voting"
-      render "show"
+    @review = Review.find(params[:review_id])
+    @user_review_vote = UserReviewVote.where(user: current_user, review: @review)
+
+    if @user_review_vote.empty?
+      user_review_vote = UserReviewVote.new(user: current_user, review: @review, user_votes: 1)
+      user_review_vote.save
+      @review.votes_count += 1
+      if @review.save
+        flash.now[:alert] = "Thanks for voting"
+        render "show"
+      end
+    elsif !@user_review_vote.empty?
+      if @user_review_vote.first.user_votes == 1
+        flash.now[:alert] = "You've already voted up this review!"
+        render "show"
+      elsif @user_review_vote.first.user_votes <= 0
+        @user_review_vote.first.user_votes += 1
+        @user_review_vote.first.save
+        @review.votes_count += 1
+        @review.save
+        flash.now[:alert] = "Thanks for voting"
+        render "show"
+      end
     end
   end
 
   def down_vote
-    @review.votes_count -= 1
-    if @review.save
-      flash.now[:alert] = "Thanks for voting"
-      render "show"
+    @review = Review.find(params[:review_id])
+    @user_review_vote = UserReviewVote.where(user: current_user, review: @review)
+
+    if @user_review_vote.empty?
+      user_review_vote = UserReviewVote.new(user: current_user, review: @review, user_votes: -1)
+      user_review_vote.save
+      @review.votes_count -= 1
+      if @review.save
+        flash.now[:alert] = "Thanks for voting"
+        render "show"
+      end
+    elsif !@user_review_vote.empty?
+      if @user_review_vote.first.user_votes == -1
+        flash.now[:alert] = "You've already voted down this review!"
+        render "show"
+      elsif @user_review_vote.first.user_votes >= 0
+        @user_review_vote.first.user_votes -= 1
+        @user_review_vote.first.save
+        @review.votes_count -= 1
+        @review.save
+        flash.now[:alert] = "Thanks for voting"
+        render "show"
+      end
     end
   end
 

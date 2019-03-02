@@ -15,26 +15,14 @@
   </div>
 </div>
 <div class="row d-flex mt-3">
-  <div class="col lg-3"></div>
-  <div class="col-sm-4 text-center">
+  <div class="col lg-2"></div>
+  <div class="col-lg-8 text-center">
     <h2>recent reviews</h2>
       <% @recent_reviews.each do |review| %>
         <ul class="reviews-list pl-0">
           <li><a href="/reviews/<%= review.id %>"><%= review.title %></a></li>
         </ul>
       <% end %>
-  </div>
-  <div class="col-sm-4 text-center">
-    <% if !current_user.nil? %>
-      <% if !@user_reviews.empty? %>
-        <h2>my reviews</h2>
-          <% @user_reviews.each do |review| %>
-            <ul class="reviews-list pl-0">
-              <li><a href="/reviews/<%= review.id %>"><%= review.title %></a></li>
-            </ul>
-          <% end %>
-      <% end %>
-    <% end %>
   </div>
   <div class="col lg-2"></div>
 </div>
