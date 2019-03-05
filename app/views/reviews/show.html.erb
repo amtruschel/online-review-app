@@ -30,8 +30,8 @@
   <div class="row d-flex text-center mb-3">
     <div class="col-lg-10">
       <% if !current_user.nil? %>
-        <%= link_to '<i class="far fa-thumbs-up thumb-icon"></i>'.html_safe, review_up_vote_path(@review), method: "post" %>
-        <%= link_to '<i class="far fa-thumbs-down thumb-icon"></i>'.html_safe, review_down_vote_path(@review), method: "post"  %>
+        <%= link_to '<i class="far fa-thumbs-up thumb-icon" id="thumbs_up"></i>'.html_safe, review_up_vote_path(@review), method: "post" %>
+        <%= link_to '<i class="far fa-thumbs-down thumb-icon" id="thumbs_down"></i>'.html_safe, review_down_vote_path(@review), method: "post"  %>
       <% end %>
     </div>
   </div>
